@@ -88,6 +88,26 @@ body:
       required: true
 
   - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: Please provide the expected behavior.
+      placeholder: Expected behavior
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: Please provide the actual behavior.
+      placeholder: Actual behavior
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
     id: ansible-playbook
     attributes:
       label: Ansible Playbook
