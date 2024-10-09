@@ -1,0 +1,100 @@
+name: Bug Report
+description: Report a bug impacting VXLAN as Code collection
+title: Bug Report Title
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for creating a bug issue to help us improve the VXLAN as Code collection. 
+        Please fill out the sections below to help us understand and reproduce the issue you are facing.
+
+  - type: markdown
+    attributes:
+      value: |
+        ### Community Note
+        Please vote on this issue by adding a 👍 [reaction](https://blog.github.com/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/) to the original issue to help the community and maintainers prioritize this request
+        Please do not leave "+1" or other comments that do not add relevant new information or questions, they generate extra noise for issue followers and do not help prioritize the request
+        If you are interested in working on this issue or have submitted a pull request, please leave a comment
+  
+  - type: textarea
+    id: related-issues
+    attributes:
+      label: Related Issue(s)
+      description: Please provide the related issue(s) for this PR
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-changes
+    attributes:
+      label: Proposed Changes to Resolve Issue(s)
+      description: Please a description of the proposed changes to resolve the issue(s) for this PR
+      render: shell
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please fillout the checklist
+      options:
+        - label: Latest commit is rebased from develop with merge conflicts resolved
+          required: true
+        - label: New or updates to documentation has been made accordingly
+          required: true
+    validations:
+      required: true
+
+  - type: textarea
+    id: ndfc-version
+    attributes:
+      label: Cisco NDFC Version
+      description: Please provide your Cisco NDFC version used when encountering this issue
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: nxos-version
+    attributes:
+      label: Cisco NX-OS Version
+      description: Please provide your Cisco NX-OS version used when encountering this issue
+      render: shell
+    validations:
+      required: false
+
+  - type: dropdown
+    id: role
+    attributes:
+      label: Which role is this issue related to?
+      multiple: false
+      options:
+        - validate
+        - create
+        - deploy
+        - remove
+        - other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: data-model
+    attributes:
+      label: Which section of the data model is this issue related to?
+      multiple: false
+      options:
+        - global
+        - topology
+        - underlay
+        - overlay_services
+        - overlay_extensions
+        - policy
+        - defaults
+        - other
+    validations:
+      required: true
+
