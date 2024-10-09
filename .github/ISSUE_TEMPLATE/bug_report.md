@@ -1,73 +1,118 @@
----
-name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
+name: Bug Report
+description: Report a bug impacting VXLAN as Code collection
+title: Bug Report Title
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for creating a bug issue to help us improve the VXLAN as Code collection. 
+        Please fill out the sections below to help us understand and reproduce the issue you are facing.
 
----
+  - type: markdown
+    attributes:
+      value: |
+        ### Community Note
+        * Please vote on this issue by adding a 👍 [reaction](https://blog.github.com/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/) to the original issue to help the community and maintainers prioritize this request
+        * Please do not leave "+1" or other comments that do not add relevant new information or questions, they generate extra noise for issue followers and do not help prioritize the request
+        * If you are interested in working on this issue or have submitted a pull request, please leave a comment
 
-<!--- Please keep this note for the community --->
+  - type: textarea
+    id: ansible-version
+    attributes:
+      label: Ansible Version
+      description: Please provide your Ansible version used when encountering this issue.
+      placeholder: ansible --version
+      render: shell
+    validations:
+      required: true
 
-### Community Note
+  - type: textarea
+    id: ansible-collection-versions
+    attributes:
+      label: Ansible Collection Versions
+      description: Please provide your Ansible Collection versions used when encountering this issue.
+      placeholder: ansible-galaxy collection list
+      render: shell
+    validations:
+      required: true
+    
+  - type: textarea
+    id: ndfc-version
+    attributes:
+      label: Cisco NDFC Version
+      description: Please provide your Cisco NDFC version used when encountering this issue.
+      render: shell
+    validations:
+      required: true
 
-* Please vote on this issue by adding a 👍 [reaction](https://blog.github.com/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/) to the original issue to help the community and maintainers prioritize this request
-* Please do not leave "+1" or other comments that do not add relevant new information or questions, they generate extra noise for issue followers and do not help prioritize the request
-* If you are interested in working on this issue or have submitted a pull request, please leave a comment
+  - type: textarea
+    id: nxos-version
+    attributes:
+      label: Cisco NX-OS Version
+      description: Please provide your Cisco NX-OS version used when encountering this issue.
+      render: shell
+    validations:
+      required: false
 
-<!--- Thank you for keeping this note for the community --->
+  - type: dropdown
+    id: role
+    attributes:
+      label: Which role is this issue related to?
+      multiple: false
+      options:
+        - validate
+        - create
+        - deploy
+        - remove
+        - other
+    validations:
+      required: true
 
-### Ansible Version and Collection Version
+  - type: dropdown
+    id: data-model
+    attributes:
+      label: Which section of the data model is this issue related to?
+      multiple: false
+      options:
+        - global
+        - topology
+        - underlay
+        - overlay_services
+        - overlay_extensions
+        - policy
+        - defaults
+        - other
+    validations:
+      required: true
 
-<!--- Please run `ansible --version` to show the Ansible version. --->
-<!--- Please run `ansible-galaxy collection list` to show the Ansible Collection version. --->
+  - type: textarea
+    id: ansible-playbook
+    attributes:
+      label: Ansible Playbook
+      description: Please provide your Ansible playbook that is encountering the issue.
+      placeholder: Ansible Playbook
+      render: yaml
+    validations:
+      required: true
 
-### New or Affected Role(s):
+  - type: textarea
+    id: step-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Please provide the steps to reproduce the issue.
+      placeholder: List of steps to reproduce the issue
+      render: shell
+    validations:
+      required: true
 
-<!--- Please list the new or affected role(s)  --->
-
-* valdiate, create, deploy, remove
-
-### Cisco NDFC version
-
-* V x.x.x
-
-### Cisco NX-OS version
-
-* V x.x.x
-
-### Ansible Playbook
-
-<!--- Information about code formatting: https://help.github.com/articles/basic-writing-and-formatting-syntax/#quoting-code --->
-
-```yaml
-# Copy-paste your anisble playbook here 
-```
-
-### Debug Output
-
-<!---
-Please provide a link to a GitHub Gist containing the complete debug output. Please do NOT paste the debug output in the issue; just paste a link to the Gist.
-
-To obtain the debug output, use `ansible-playbook -vvv`
---->
-
-### Expected Behavior
-
-<!--- What should have happened? --->
-
-### Actual Behavior
-
-<!--- What actually happened? --->
-
-### Steps to Reproduce
-
-<!--- Please list the steps required to reproduce the issue. --->
-
-### References
-
-<!---
-Information about referencing Github Issues: https://help.github.com/articles/basic-writing-and-formatting-syntax/#referencing-issues-and-pull-requests
-
-Are there any other GitHub issues (open or closed) or pull requests that should be linked here? Vendor documentation? For example:
---->
+  - type: textarea
+    id: debug-output
+    attributes:
+      label: Relevant Debug Output
+      description: Please copy and paste any relevant log or debug output. This will be automatically formatted into code.
+      placeholder: Relevant log or debug output
+      render: shell
+    validations:
+      required: false
