@@ -1,5 +1,6 @@
 <!--- Please ensure that the WIP label is not being applied if ready for review -->
-<!--- If the WIP label is applied to your PR, no one will look at it -->
+<!--- If the wip label is applied to your PR, no one will look at it -->
+<!--- Please feel free to ask for help -->
 
 ## Related Issue(s)
 <!--- Please link the relevant issue(s) -->
